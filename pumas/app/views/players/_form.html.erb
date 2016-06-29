@@ -1,0 +1,50 @@
+<%= form_for(player) do |f| %>
+  <% if player.errors.any? %>
+<div class="container">
+    <div id="error_explanation">
+      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">     
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre, :class => 'form-control' %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.text_field :photo, :class => 'form-control' %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :numero %>
+    <%= f.text_field :numero, :class => 'form-control' %>
+   </div>
+ </div>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :posicion %>
+      <%= f.text_field :posicion, :class => 'form-control' %>
+    </div>
+  </div>  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :pais %>
+      <%= f.text_field :pais, :class => 'form-control' %>
+    </div>
+   </div> 
+  <div class="form-group">
+    <div class="actions">
+      <%= f.submit class: "btn btn-warning" %>
+    </div>
+  </div>
+  </div>
+<% end %>
